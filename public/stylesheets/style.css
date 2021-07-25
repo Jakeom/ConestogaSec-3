@@ -10860,7 +10860,7 @@ html {
 }
 
 .bg-gradient-primary-to-secondary {
-  background: linear-gradient(45deg, #2937f0, #9f1ae2) !important;
+  background: linear-gradient(45deg, #01218B, #0098DC) !important;
 }
 
 .font-alt {
@@ -10876,8 +10876,8 @@ html {
 
 aside,
 section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
 }
 
 .app-badge {
@@ -10971,8 +10971,8 @@ section {
 
 section.cta {
   position: relative;
-  padding: 15rem 0;
-  background-image: url("https://source.unsplash.com/5g41N3uRPf8/1500x800");
+  padding: 5rem 0;
+  background-image: url("/images/sub.jpg");
   background-position: center;
   background-size: cover;
 }

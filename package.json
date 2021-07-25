@@ -8,10 +8,14 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "emailsender": "^0.1.1",
     "express": "~4.16.1",
+    "fetch": "^1.1.0",
     "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemailer": "^6.6.3"
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.6.3",
+    "recaptcha-v2": "^0.1.3"
   }
 }
