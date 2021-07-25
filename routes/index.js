@@ -17,21 +17,19 @@ router.get('/about', (req,res,next)=>{
 //app.post('/subscribe', async (req, res) => {
 router.post('/subscribe', async (req, res, next) => {
 
-  const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-
-  var isValidation = false;
-  // Check Email format
-  if (req.body.to.trim() == "" || req.body.to.match(regExp) == null) { 
-    isValidation = true;
-  }
-  if (req.body.text == null || req.body.text.trim() == "") { 
-    isValidation = true;
-  }
-
-  if(isValidation){
-    return res.json({ success: false, msg: 'Please, Check the Values.' });
-  }
-
+  // const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+  // var isValidation = false;
+  // // Check Email format
+  // if (req.body.to.trim() == "" || req.body.to.match(regExp) == null) { 
+  //   isValidation = true;
+  // }
+  // if (req.body.text == null || req.body.text.trim() == "") { 
+  //   isValidation = true;
+  // }
+  // if(isValidation){
+  //   return res.json({ success: false, msg: 'Please, Check the Values.' });
+  // }
+console.log(req.body);
   if (!req.body.captcha)
     return res.json({ success: false, msg: 'Please select captcha' });
 
