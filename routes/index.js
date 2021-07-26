@@ -2,7 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
-var sender = require('emailsender');
+//var sender = require('emailsender');
 var router = express.Router();
 
 /* GET home page. */
@@ -62,7 +62,7 @@ console.log(req.body);
       pass: '!1234qwer'
     }
   }
-  var _sender = new sender(mailConfig)
+  //var _sender = new sender(mailConfig)
 
   var mailOptions = {
     from: 'JakeomCa@gmail.com',
@@ -75,7 +75,7 @@ console.log(req.body);
     //console.log(err);
   }
 
-_sender.send(mailOptions, callback)
+//_sender.send(mailOptions, callback)
 
   // If successful
   return res.json({ success: true, msg: 'Eamil success!!' });
