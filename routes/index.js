@@ -2,7 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
-//var sender = require('emailsender');
+const nodemailer = require('nodemailer');
 var router = express.Router();
 
 /* GET home page. */
@@ -53,31 +53,30 @@ console.log(req.body);
     return res.json({ success: false, msg: 'Failed captcha verification' });
 
 
-  var mailConfig = {
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
     auth: {
-      user: 'JakeomCa@gmail.com',
-      pass: '!1234qwer'
+      user: 'JakeomCa@gmail.com',  // gmail 계정 아이디를 입력
+      pass: '!1234qwer'          // gmail 계정의 비밀번호를 입력
     }
-  }
-  //var _sender = new sender(mailConfig)
+  });
 
-  var mailOptions = {
-    from: 'JakeomCa@gmail.com',
-    to: req.body.to,
-    text: req.body.text
-  }
+  let mailOptions = {
+    from: 'JakeomCa@gmail.com',    // 발송 메일 주소 (위에서 작성한 gmail 계정 아이디)
+    to: req.body.to ,                     // 수신 메일 주소
+    subject: 'Hello, I am Jakeom.',   // 제목
+    text: req.body.text  // 내용
+  };
 
-  var callback = function(err, info){
-    //callback handle
-    //console.log(err);
-  }
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    }
+    else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 
-//_sender.send(mailOptions, callback)
-
-  // If successful
   return res.json({ success: true, msg: 'Eamil success!!' });
 });
 
