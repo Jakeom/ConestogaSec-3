@@ -7,12 +7,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'PrjectTrackerSec3' });
+  res.render('index', { title: 'Jakeom' });
 });
 
-router.get('/about', (req,res,next)=>{
-  res.render('about', {title : 'About', testPage : 'dasdfasdfasdfasdf'});
-})
+// router.get('/about', (req,res,next)=>{
+//   res.render('about', {title : 'About', testPage : 'dasdfasdfasdfasdf'});
+// })
 
 //app.post('/subscribe', async (req, res) => {
 router.post('/subscribe', async (req, res, next) => {
