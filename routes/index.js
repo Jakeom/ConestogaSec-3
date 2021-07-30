@@ -56,16 +56,16 @@ console.log(req.body);
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'JakeomCa@gmail.com',  // gmail 계정 아이디를 입력
-      pass: '!1234qwer'          // gmail 계정의 비밀번호를 입력
+      user: 'JakeomCa@gmail.com',  // gmail Account
+      pass: '!1234qwer'          // gmail pass
     }
   });
 
   let mailOptions = {
-    from: 'JakeomCa@gmail.com',    // 발송 메일 주소 (위에서 작성한 gmail 계정 아이디)
-    to: req.body.to ,                     // 수신 메일 주소
-    subject: 'Hello, I am Jakeom.',   // 제목
-    text: req.body.text  // 내용
+    from: 'JakeomCa@gmail.com',    // my account
+    to: req.body.to ,                     // send email address
+    subject: 'Hello, I am Jakeom.',   // subject
+    text: req.body.text  // content
   };
 
   transporter.sendMail(mailOptions, function(error, info){
